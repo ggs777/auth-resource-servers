@@ -1,4 +1,4 @@
-package com.workspace.security.config;
+package com.workspace.security.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
