@@ -1,5 +1,6 @@
 package com.workspace.security.config;
 
+import com.workspace.security.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

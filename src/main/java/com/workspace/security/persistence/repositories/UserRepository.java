@@ -1,5 +1,6 @@
-package com.workspace.security.user;
+package com.workspace.security.persistence.repositories;
 
+import com.workspace.security.persistence.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

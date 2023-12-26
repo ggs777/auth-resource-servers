@@ -1,9 +1,10 @@
-package com.workspace.security.auth;
+package com.workspace.security.services;
 
-import com.workspace.security.config.JwtService;
-import com.workspace.security.user.Role;
-import com.workspace.security.user.User;
-import com.workspace.security.user.UserRepository;
+import com.workspace.security.commons.vo.requests.AuthenticationRequestVo;
+import com.workspace.security.commons.vo.responses.AuthenticationResponseVo;
+import com.workspace.security.commons.vo.requests.RegisterRequestVo;
+import com.workspace.security.persistence.entity.User;
+import com.workspace.security.persistence.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,7 +20,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthenticationResponse register(RegisterRequest request) {
+    public AuthenticationResponseVo register(RegisterRequestVo request) {
 
         var user = User.builder()
                 .firstName(request.getFirstName())
@@ -30,19 +31,19 @@ public class AuthenticationService {
                 .build();
         repository.save(user);
         var jwt = jwtService.generateToken(user);
-        return AuthenticationResponse.builder()
+        return AuthenticationResponseVo.builder()
                 .token(jwt)
                 .build();
     }
 
-    public AuthenticationResponse authenticate(AuthenticationRequest request) {
+    public AuthenticationResponseVo authenticate(AuthenticationRequestVo request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 request.getEmail(), request.getPassword()
         ));
         var user = repository.findByEmail(request.getEmail())
                 .orElseThrow();
         var jwt = jwtService.generateToken(user);
-        return AuthenticationResponse.builder()
+        return AuthenticationResponseVo.builder()
                 .token(jwt)
                 .build();
     }

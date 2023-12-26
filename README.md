@@ -7,6 +7,10 @@ Tech Stack used:
 - Spring Security 6 
 - Postgres DB
 
+Swagger UI-> http://localhost:8080/swagger-ui/index.html
+
+Actuator endpoint-> http://localhost:8080/actuator/health
+
 Reference image for JWT flow diagram:
 ![image](https://github.com/ggs777/jwt/assets/21174296/9ee4acf8-1696-4219-908e-c7c95b7c19a9)
 

@@ -1,6 +1,6 @@
 package com.workspace.security.config;
 
-import com.workspace.security.user.UserRepository;
+import com.workspace.security.persistence.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

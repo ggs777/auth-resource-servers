@@ -1,5 +1,6 @@
-package com.workspace.security.user;
+package com.workspace.security.commons.enums;
 
+import com.workspace.security.commons.enums.Permission;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

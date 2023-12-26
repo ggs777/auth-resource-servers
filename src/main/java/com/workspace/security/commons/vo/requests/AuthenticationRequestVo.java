@@ -1,4 +1,4 @@
-package com.workspace.security.auth;
+package com.workspace.security.commons.vo.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
+public class AuthenticationRequestVo {
 
-    private String token;
+    private String email;
+    private String password;
 }

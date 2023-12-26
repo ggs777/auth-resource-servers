@@ -1,4 +1,4 @@
-package com.workspace.security.user;
+package com.workspace.security.commons.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

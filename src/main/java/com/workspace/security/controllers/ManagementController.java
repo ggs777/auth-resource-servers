@@ -1,4 +1,4 @@
-package com.workspace.security.demo;
+package com.workspace.security.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
